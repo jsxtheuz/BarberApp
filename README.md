@@ -1,5 +1,7 @@
 Run App:
 
+cd BarberApp
+
 1- Install dependencys :
 
  npm install @react-navigation/native
