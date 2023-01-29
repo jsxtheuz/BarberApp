@@ -3,9 +3,13 @@ Run App:
 1- Install dependencys :
 
  npm install @react-navigation/native
+ 
  npm install @react-navigation/stack
+ 
  npm install react-native-gesture-handler
+ 
  npm install @react-native-community/datetimepicker
+ 
  npm install react-native-modalize
 
 
