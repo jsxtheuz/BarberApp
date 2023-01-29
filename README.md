@@ -1,5 +1,14 @@
 Run App:
 
-1- npx react-native run-android
+1- Install dependencys :
 
-2- npx react-native strat
+ npm install @react-navigation/native
+ npm install @react-navigation/stack
+ npm install react-native-gesture-handler
+ npm install @react-native-community/datetimepicker
+ npm install react-native-modalize
+
+
+2- npx react-native run-android
+
+3- npx react-native strat
