@@ -109,7 +109,7 @@ export default function Login() {
 
        <TouchableOpacity onPress={() => {
             Linking.openURL(
-              'https://l.instagram.com/?u=http%3A%2F%2Fwa.me%2F5548991678736&e=AT3S7TajCagP-ywN4cq9tADomraH0cGcx4EOFpb8RlXZ3ZN408p11pqJAm6nVbshrrx98fa9-ybe0Zp_KGau0NKosW3j58cb&s=1'
+              'https://api.whatsapp.com/send/?phone=5548991678736&text&type=phone_number&app_absent=0'
             );
           }}> 
           
