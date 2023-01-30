@@ -12,7 +12,6 @@ cd BarberApp
  
  npm install @react-native-community/datetimepicker
  
- npm install react-native-modalize
 
 
 2- npx react-native run-android
