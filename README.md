@@ -10,7 +10,7 @@ cd BarberApp
  
  npm install react-native-gesture-handler
  
- npm install @syncfusion/ej2-react-calendars
+ npm install react-native-calendars
 
 
 2- npx react-native run-android
