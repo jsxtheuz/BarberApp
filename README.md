@@ -9,9 +9,6 @@ cd BarberApp
  npm install @react-navigation/stack
  
  npm install react-native-gesture-handler
- 
- npm install @react-native-community/datetimepicker
- 
 
 
 2- npx react-native run-android
