@@ -9,6 +9,8 @@ cd BarberApp
  npm install @react-navigation/stack
  
  npm install react-native-gesture-handler
+ 
+ npm install @syncfusion/ej2-react-calendars
 
 
 2- npx react-native run-android
