@@ -10,7 +10,7 @@ cd BarberApp
  
  npm install react-native-gesture-handler
  
- npm install react-native-calendars
+ npm install --save react-native-calendars
 
 
 2- npx react-native run-android
