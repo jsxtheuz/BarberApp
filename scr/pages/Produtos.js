@@ -1,15 +1,10 @@
-import {Text, SafeAreaView, View, Image, TouchableOpacity, Platform, FlatList} from 'react-native';
+import {Text, SafeAreaView, Image, FlatList} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import{ useState } from 'react';
 import Horarios from "./Horarios"
 
 export default function Produtos(){
 
   const navegacao = useNavigation();
-
-
-  function Agendar(){
-    }
 
     const navalhado = require("../images/navalhado.png");
     const maquina = require("../images/maquina.png");
