@@ -9,7 +9,7 @@ export default function Login() {
   const navegacao = useNavigation();
 
   function irparaCadastre(){
-      navegacao.navigate('cadastro')
+      navegacao.navigate('Cadastro')
     }
 
     function irparaEntre(){
@@ -100,7 +100,7 @@ export default function Login() {
       </TouchableOpacity>
       <TouchableOpacity onPress={() => {
             Linking.openURL(
-              'https://www.instagram.com/dindosbarbershop/'
+              'https://www.instagram.com/mr.bossbarbearia/'
             );
           }} > 
           
@@ -109,7 +109,7 @@ export default function Login() {
 
        <TouchableOpacity onPress={() => {
             Linking.openURL(
-              'https://api.whatsapp.com/send/?phone=5548991678736&text&type=phone_number&app_absent=0'
+              'https://api.whatsapp.com/send/?phone=554899172695&text&type=phone_number&app_absent=0'
             );
           }}> 
           
@@ -118,7 +118,7 @@ export default function Login() {
 
       <TouchableOpacity onPress={() => {
             Linking.openURL(
-              'https://goo.gl/maps/7mfBrwQGo9uMtEqK9'
+              'https://goo.gl/maps/vVA7txxq3E54p1eZ9'
             );
           }}> 
           
