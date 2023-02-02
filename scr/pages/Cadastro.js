@@ -12,6 +12,7 @@ export default function Cadastro() {
     }
 
     const [email, setEmail] = useState("");
+    const [number, onChangeNumber] = useState("");
     const [senha, setSenha] = useState("");
     const [nome, setNome] = useState("");
 
@@ -23,7 +24,18 @@ export default function Cadastro() {
           <ScrollView>
             <Text style={{textAligin:"center", marginTop: -5, fontSize: 40, fontFamily: "cursive", marginLeft: "33%", color:"black"}}>Cadastro</Text>
           
-            <TextInput style={{marginLeft: "15%", fontSize:18, borderWidth: 2, borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", marginTop: "7%", color: 'black', textAlign:"center", justifyContent:"center"}}
+              <TextInput style={{marginTop:"7%", marginLeft: "15%", fontSize:18, borderWidth: 2, borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", color: 'black', textAlign:"center", justifyContent:"center"}}
+
+              placeholderTextColor="black"
+              value={nome}
+              onChangeText={nome => setNome(nome)}
+              placeholder="Digite seu nome"
+
+              />
+
+
+
+            <TextInput style={{marginLeft: "15%", fontSize:18, borderWidth: 2, borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", marginTop: "3%", color: 'black', textAlign:"center", justifyContent:"center"}}
 
             placeholderTextColor="black"
             value={email}
@@ -32,14 +44,15 @@ export default function Cadastro() {
 
             />
 
-            <TextInput style={{marginTop:"3%", marginLeft: "15%", fontSize:18, borderWidth: 2, borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", color: 'black', textAlign:"center", justifyContent:"center"}}
-
-            placeholderTextColor="black"
-            value={nome}
-            onChangeText={nome => setNome(nome)}
-            placeholder="Digite seu nome"
-
+            <TextInput style={{marginLeft: "15%", fontSize:18, borderWidth: 2, borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", marginTop: "3%", color: 'black', textAlign:"center", justifyContent:"center"}}
+              
+              placeholderTextColor="black"
+              onChangeText={onChangeNumber}
+              value={number}
+              placeholder="Digite seu número"
+              keyboardType="numeric"
             />
+
 
             <TextInput style={{marginTop:"3%", marginLeft: "15%", fontSize:18,borderWidth: 2,borderColor:"black", borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", color: 'black', textAlign:"center", justifyContent:"center"}}
 
