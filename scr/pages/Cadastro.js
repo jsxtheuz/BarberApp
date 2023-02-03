@@ -19,12 +19,14 @@ export default function Cadastro() {
     return (
         <View style={{height: "100%", width: "100%", color:"black", backgroundColor: "white"}}>
           <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} keyboardVerticalOffset={80} style={{backgroundColor:"transparent"}}>
-          <Image source={require("../images/logo.png")}  style={{ marginTop: "20%", height: "40%", width: "100%",}}/>
+          <Image source={require("../images/logo.png")}  style={{ marginTop: "20%", height: "30%", width: "100%",}}/>
 
           <ScrollView>
-            <Text style={{textAligin:"center", marginTop: -5, fontSize: 40, fontFamily: "cursive", marginLeft: "33%", color:"black"}}>Cadastro</Text>
+            <Text style={{textAligin:"center", marginTop: -10, fontSize: 40, fontFamily: "cursive", marginLeft: "33%", color:"black"}}>Cadastro</Text>
+
+               <Image source={require("../images/user.png")}  style={{marginLeft:"5%", marginTop:"13%", height: 40, width:40}}/>
           
-              <TextInput style={{marginTop:"7%", marginLeft: "15%", fontSize:18, borderWidth: 2, borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", color: 'black', textAlign:"center", justifyContent:"center"}}
+              <TextInput style={{fontSize:18,borderWidth: 2, borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", marginTop: "-10%", marginLeft: '20%', color: 'black', textAlign:"center", justifyContent:"center"}}
 
               placeholderTextColor="black"
               value={nome}
@@ -33,9 +35,9 @@ export default function Cadastro() {
 
               />
 
+            <Image source={require("../images/email.png")} style={{marginLeft:"5%", marginTop:"13%", height: 40, width:40}} />
 
-
-            <TextInput style={{marginLeft: "15%", fontSize:18, borderWidth: 2, borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", marginTop: "3%", color: 'black', textAlign:"center", justifyContent:"center"}}
+            <TextInput style={{fontSize:18,borderWidth: 2, borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", marginTop: "-10%", marginLeft: '20%', color: 'black', textAlign:"center", justifyContent:"center"}}
 
             placeholderTextColor="black"
             value={email}
@@ -44,7 +46,9 @@ export default function Cadastro() {
 
             />
 
-            <TextInput style={{marginLeft: "15%", fontSize:18, borderWidth: 2, borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", marginTop: "3%", color: 'black', textAlign:"center", justifyContent:"center"}}
+            <Image source={require("../images/celular.png")}  style={{marginLeft:"5%", marginTop:"13%", height: 40, width:40}} />
+
+            <TextInput style={{fontSize:18,borderWidth: 2, borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", marginTop: "-10%", marginLeft: '20%', color: 'black', textAlign:"center", justifyContent:"center"}}
               
               placeholderTextColor="black"
               onChangeText={onChangeNumber}
@@ -53,8 +57,10 @@ export default function Cadastro() {
               keyboardType="numeric"
             />
 
+            <Image source={require("../images/senha.png")}   style={{marginLeft:"5%", marginTop:"13%", height: 40, width:40}} />
 
-            <TextInput style={{marginTop:"3%", marginLeft: "15%", fontSize:18,borderWidth: 2,borderColor:"black", borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", color: 'black', textAlign:"center", justifyContent:"center"}}
+
+            <TextInput style={{fontSize:18,borderWidth: 2, borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", marginTop: "-10%", marginLeft: '20%', color: 'black', textAlign:"center", justifyContent:"center"}}
 
             placeholderTextColor="black"
             secureTextEntry={true} 
