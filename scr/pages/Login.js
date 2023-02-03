@@ -92,7 +92,7 @@ export default function Login() {
        />
 
        <TouchableOpacity style={styles.botaoentrar} onPress={irparaEntre}> 
-        <Text style={{color:"white", textAligin:"center", justifyContent:"center", fontSize: 20, marginLeft:35, aliginItens:"center", marginTop:"2%"}}>Entrar</Text>
+        <Text style={{color:"white", textAligin:"center", justifyContent:"center", fontSize: 20, marginLeft:35, aliginItens:"center"}}>Entrar</Text>
       </TouchableOpacity>
 
       <TouchableOpacity onPress={irparaCadastre}> 
