@@ -10,6 +10,8 @@ cd BarberApp
  
  npm install react-native-gesture-handler
  
+ npm install react-native-screens react-native-safe-area-context
+ 
  npm install --save react-native-calendars
 
 
