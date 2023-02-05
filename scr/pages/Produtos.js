@@ -1,10 +1,19 @@
 import {Text, SafeAreaView, Image, FlatList} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useEffect } from "react";
+import { useNavigation } from "@react-navigation/native";
+import {user} from "./Login"
 import Horarios from "./Horarios"
 
 export default function Produtos(){
 
   const navegacao = useNavigation();
+
+  useEffect(() => {
+    if(user === false){
+      navegacao.navigate('Login')
+      console.log(user)
+    }
+  })
 
     const navalhado = require("../images/navalhado.png");
     const maquina = require("../images/maquina.png");
