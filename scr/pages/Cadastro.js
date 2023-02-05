@@ -7,26 +7,52 @@ export default function Cadastro() {
 
     const navegacao = useNavigation();
 
-    function irparaEntre(){
-        navegacao.navigate('Login');
-    }
-
     const [email, setEmail] = useState("");
     const [number, onChangeNumber] = useState("");
     const [senha, setSenha] = useState("");
     const [nome, setNome] = useState("");
+    const [senhainvalida, setSenhainvalida] = useState(false);
+    const [emailinvalido, setEmailinvalido] = useState(false);
+    const [nomeinvalido, setNomeinvalido] = useState(false);
+    const [numberinvalido, setNumberinvalido] = useState(false);
+    const [textoinvalido, settextoInvalido] = useState("")
+
+    function irparaEntre(){
+      if( email === null || email === "" || email.length === 0  ){
+        setEmailinvalido(true)
+        if(emailinvalido === true){
+          settextoInvalido("Email Inválido");
+        }
+      } else if(senha === null || senha === ""|| senha.length === 0){
+        setSenhainvalida(true)
+        if(senhainvalida === true){
+          settextoInvalido("Senha Inválida");
+        }
+      } else if(nome === null || nome === ""|| nome.length === 0){
+        setNomeinvalido(true)
+        if(nomeinvalido === true){
+          settextoInvalido("Nome Inválido");
+        }
+      } else if(number === null || number === ""|| number.length === 0){
+       setNumberinvalido(true)
+        if(numberinvalido === true){
+          settextoInvalido("Número Inválido");
+        }
+      }else {
+        navegacao.navigate('Horarios');
+      }
+    }
+    
 
     return (
         <View style={{height: "100%", width: "100%", color:"black", backgroundColor: "white"}}>
           <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} keyboardVerticalOffset={80} style={{backgroundColor:"transparent"}}>
-          <Image source={require("../images/logo.png")}  style={{ marginTop: "20%", height: "30%", width: "100%",}}/>
+          <Image source={require("../images/logo.png")}  style={{ marginTop: "20%", height: "40%", width: "100%",}}/>
 
           <ScrollView>
-            <Text style={{textAligin:"center", marginTop: -10, fontSize: 40, fontFamily: "cursive", marginLeft: "33%", color:"black"}}>Cadastro</Text>
-
-               <Image source={require("../images/user.png")}  style={{marginLeft:"5%", marginTop:"13%", height: 40, width:40}}/>
+            <Text style={{textAligin:"center", marginTop: -5, fontSize: 40, fontFamily: "cursive", marginLeft: "35%", color:"black"}}>Cadastro</Text>
           
-              <TextInput style={{fontSize:18,borderWidth: 2, borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", marginTop: "-10%", marginLeft: '20%', color: 'black', textAlign:"center", justifyContent:"center"}}
+              <TextInput style={{marginTop:"7%", marginLeft: "15%", fontSize:18, borderWidth: 2, borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", color: 'black', textAlign:"center", justifyContent:"center"}}
 
               placeholderTextColor="black"
               value={nome}
@@ -35,9 +61,8 @@ export default function Cadastro() {
 
               />
 
-            <Image source={require("../images/email.png")} style={{marginLeft:"5%", marginTop:"13%", height: 40, width:40}} />
 
-            <TextInput style={{fontSize:18,borderWidth: 2, borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", marginTop: "-10%", marginLeft: '20%', color: 'black', textAlign:"center", justifyContent:"center"}}
+            <TextInput style={{marginLeft: "15%", fontSize:18, borderWidth: 2, borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", marginTop: "3%", color: 'black', textAlign:"center", justifyContent:"center"}}
 
             placeholderTextColor="black"
             value={email}
@@ -46,9 +71,7 @@ export default function Cadastro() {
 
             />
 
-            <Image source={require("../images/celular.png")}  style={{marginLeft:"5%", marginTop:"13%", height: 40, width:40}} />
-
-            <TextInput style={{fontSize:18,borderWidth: 2, borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", marginTop: "-10%", marginLeft: '20%', color: 'black', textAlign:"center", justifyContent:"center"}}
+            <TextInput style={{marginLeft: "15%", fontSize:18, borderWidth: 2, borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", marginTop: "3%", color: 'black', textAlign:"center", justifyContent:"center"}}
               
               placeholderTextColor="black"
               onChangeText={onChangeNumber}
@@ -57,10 +80,8 @@ export default function Cadastro() {
               keyboardType="numeric"
             />
 
-            <Image source={require("../images/senha.png")}   style={{marginLeft:"5%", marginTop:"13%", height: 40, width:40}} />
 
-
-            <TextInput style={{fontSize:18,borderWidth: 2, borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", marginTop: "-10%", marginLeft: '20%', color: 'black', textAlign:"center", justifyContent:"center"}}
+            <TextInput style={{marginTop:"3%", marginLeft: "15%", fontSize:18,borderWidth: 2,borderColor:"black", borderRadius:10, width: "70%", height: 40, backgroundColor: "transparent", color: 'black', textAlign:"center", justifyContent:"center"}}
 
             placeholderTextColor="black"
             secureTextEntry={true} 
@@ -70,9 +91,13 @@ export default function Cadastro() {
 
             />
 
-            <TouchableOpacity style={{marginTop: "10%", borderRadius: 7, backgroundColor:"black", color:"white", textAlign: "center", height:30, width: "30%",marginLeft: "38%", justifyContent:"center",alignItems:"center"}} onPress={irparaEntre}> 
+            <Text style={{color:"red", fontSize:17,  marginTop: "3%", marginLeft:"40%",fontWeight:"bold"}}>{textoinvalido}</Text>
+
+            <TouchableOpacity style={{marginTop: "5%", borderRadius: 7, backgroundColor:"black", color:"white", textAlign: "center", height:30, width: "30%",marginLeft: "38%", justifyContent:"center",alignItems:"center"}} onPress={irparaEntre}> 
                 <Text style={{color:"white", fontSize: 20}}>Cadastrar</Text>
             </TouchableOpacity>
+
+            
           
           </ScrollView>
           </KeyboardAvoidingView>
