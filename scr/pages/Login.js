@@ -1,42 +1,65 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Linking, TouchableOpacity,TextInput, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
-import{ useState } from 'react';
+import{ useState, useEffect } from 'react';
 
 
 export default function Login() {
 
   const navegacao = useNavigation();
 
+
   function irparaCadastre(){
       navegacao.navigate('Cadastro')
     }
 
-    function irparaEntre(){
-        navegacao.navigate('Produtos');
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const[emailinvalido, setEmailinvalido] = useState(false);
+  const [senhainvalida, setSenhainvalida] = useState(false);
+  const [textoinvalido, settextoInvalido] = useState("")
+  const [user, setUser] = useState(false)
+
+  function irparaEntre(){
+
+    if( email === null || email === "" || email.length === 0  ){
+      setEmailinvalido(true)
+      if(emailinvalido === true){
+        settextoInvalido("Email Inválido");
+      }
+    } else if(senha === null || senha === ""|| senha.length === 0){
+      setSenhainvalida(true)
+      if(senhainvalida === true){
+        settextoInvalido("Senha Inválida");
+      }
+    } else {
+      setUser(true)
+      navegacao.navigate('Produtos');
     }
-
-
-  var styles = StyleSheet.create({
-
-    bk:{
+  }
+    
+    
+    var styles = StyleSheet.create({
+      
+      bk:{
       marginTop: "5%",
       height: "35%",
       width: "100%",
     },
-
+    
     botaoentrar:{
       marginTop: "10%", 
       borderRadius: 7, 
       backgroundColor:"black", 
       color:"white",       
       textAlign: "center", 
+      justifyContent:"center",
+      alignItems:"center",
       height:30, 
       width: "30%",
-      marginLeft: "38%"
-      
+      marginLeft: "38%",
     },
-
+    
     text2:{
       textAligin:"center", 
       marginTop: 20, 
@@ -55,12 +78,11 @@ export default function Login() {
     }
 
   });
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
+  
   return (
     <View style={{height: "100%", width: "100%", color:"black", backgroundColor: "white"}}>
       <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} keyboardVerticalOffset={80} style={{backgroundColor:"transparent"}}>
-      <Image source={require("../images/logo.png")}  style={styles.bk}/>
+        <Image source={require("../images/logo.png")}  style={styles.bk}/>
 
       <ScrollView>
       <Text style={{textAligin:"center", marginTop: 30, fontSize: 40, fontFamily: "cursive", marginLeft: "24%", color:"black"}}>Bem Vindo(a)</Text>
@@ -92,8 +114,10 @@ export default function Login() {
        />
 
        <TouchableOpacity style={styles.botaoentrar} onPress={irparaEntre}> 
-        <Text style={{color:"white", textAligin:"center", justifyContent:"center", fontSize: 20, marginLeft:35, aliginItens:"center"}}>Entrar</Text>
+        <Text style={{color:"white", textAligin:"center", justifyContent:"center", fontSize: 20, aliginItens:"center"}}>Entrar</Text>
       </TouchableOpacity>
+
+      <Text style={{color:"red", fontSize:17,  marginTop: "3%", marginLeft:"40%",fontWeight:"bold"}}>{textoinvalido}</Text>
 
       <TouchableOpacity onPress={irparaCadastre}> 
         <Text style={{ color:"black", marginTop: "5%", marginLeft:"40%"}}>CADASTRAR- SE</Text>
