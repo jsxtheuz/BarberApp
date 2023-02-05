@@ -1,10 +1,9 @@
-import { View, TouchableOpacity, Modal, Text, SafeAreaView, Image, ScrollView} from "react-native";
-import React, {useState} from "react";
+import { View, TouchableOpacity, Modal, Text, SafeAreaView, Image, ScrollView,  FlatList} from "react-native";
+import React, {useState, useEffect} from "react";
 import {LocaleConfig, Calendar} from 'react-native-calendars';
-import { FlatList } from "react-native-gesture-handler";
+
 
 export default function (){
-
     const horasidsponiveis = [
         '9:00',
         '9:30',
@@ -51,7 +50,9 @@ export default function (){
 LocaleConfig.defaultLocale = 'pt';
 const [cor, setCor] = useState("white")
 const [visivel, setVisivel] = useState(false)
-
+const [selecthora, setselectHora] = useState("")
+const [data, setData]= useState(new Date());
+const [selectdata, setselectData] = useState("")
 
   return(
     <View>
@@ -74,18 +75,22 @@ const [visivel, setVisivel] = useState(false)
 
         <Calendar 
           style={{marginTop: 35}}
-          initialDate={new Date()}
-          minDate={new Date()}
+          initialDate={data}
+          minDate={data}
+          hideExtraDays={true}
+          disableAllTouchEventsForDisabledDays={true}
+          onDayPress={day => setselectData("Dia "+day.day+"/"+day.month+" Correto?")}
         />
         <SafeAreaView style={{backgroundColor:"white", width:"80%", height:50, marginTop:"8%", borderRadius:10}}>
 
         <FlatList 
           horizontal
+          showsHorizontalScrollIndicator={false}
           data={horasidsponiveis}
           renderItem={({item}) => 
-            <TouchableOpacity style={{justifyContent:"center", alignItems:"center"}}>
-          <SafeAreaView style={{}}>
-              <Text style={{color:"black", fontSize:16, marginLeft:10, fontWeight:"bold"}}>{item}</Text>
+            <TouchableOpacity onPress={() => setselectHora(item)} style={{justifyContent:"center", alignItems:"center", marginLeft:10, height:48, width:48}}>
+          <SafeAreaView style={{backgroundColor: item === selecthora ? "black" : "white",justifyContent:"center", alignItems:"center",borderRadius:50, width:"100%",height:"100%"}} >
+              <Text style={{color: item === selecthora ? "white" : "black", fontSize:16, fontWeight:"bold",justifyContent:"center", alignItems:"center"}}>{item}</Text>
           </SafeAreaView>
           </TouchableOpacity>
         }
@@ -93,8 +98,10 @@ const [visivel, setVisivel] = useState(false)
 
         </SafeAreaView>
 
+        <Text style={{color:"white", fontSize:18, marginTop:15}}>{selectdata} {setHora}</Text>
+
         <TouchableOpacity
-          style={{backgroundColor:"white", color:"black", borderRadius:20, width:"50%", height: 35, justifyContent:"center", alignItems:"center",marginTop: "8%"}}
+          style={{backgroundColor:"white", color:"black", borderRadius:20, width:"50%", height: 35, justifyContent:"center", alignItems:"center",marginTop: "5%"}}
           onPress={() => setVisivel(false)}>
         <Text style={{color:"black"}}>Confirmar</Text>        
         </TouchableOpacity>
