@@ -54,6 +54,11 @@ const [selecthora, setselectHora] = useState("")
 const [data, setData]= useState(new Date());
 const [selectdata, setselectData] = useState("")
 
+function confirmar(){
+  setVisivel(false);
+  window.alert("Horário marcado")
+}
+
   return(
     <View>
       <Modal
@@ -81,7 +86,8 @@ const [selectdata, setselectData] = useState("")
           disableAllTouchEventsForDisabledDays={true}
           onDayPress={day => setselectData("Dia "+day.day+"/"+day.month+" Correto?")}
         />
-        <SafeAreaView style={{backgroundColor:"white", width:"80%", height:50, marginTop:"8%", borderRadius:10}}>
+        <Text style={{color:"white", fontSize:18, marginTop:15, fontWeight:"bold"}}>{selectdata}</Text>
+        <SafeAreaView style={{backgroundColor:"white", width:"80%", height:50, marginTop:"5%", borderRadius:10}}>
 
         <FlatList 
           horizontal
@@ -98,11 +104,10 @@ const [selectdata, setselectData] = useState("")
 
         </SafeAreaView>
 
-        <Text style={{color:"white", fontSize:18, marginTop:15}}>{selectdata} {setHora}</Text>
 
         <TouchableOpacity
           style={{backgroundColor:"white", color:"black", borderRadius:20, width:"50%", height: 35, justifyContent:"center", alignItems:"center",marginTop: "5%"}}
-          onPress={() => setVisivel(false)}>
+          onPress={confirmar}>
         <Text style={{color:"black"}}>Confirmar</Text>        
         </TouchableOpacity>
             </SafeAreaView>
