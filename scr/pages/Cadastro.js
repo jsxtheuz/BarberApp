@@ -17,7 +17,7 @@ export default function Cadastro() {
     const [numberinvalido, setNumberinvalido] = useState(false);
     const [textoinvalido, settextoInvalido] = useState("")
 
-    function irparaEntre(){
+    async function irparaEntre(){
       if( email === null || email === "" || email.length === 0  ){
         setEmailinvalido(true)
         if(emailinvalido === true){
