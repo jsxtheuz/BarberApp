@@ -20,7 +20,7 @@ export default function Login() {
   const [textoinvalido, settextoInvalido] = useState("")
   const [user, setUser] = useState(false)
 
-  function irparaEntre(){
+  async function irparaEntre(){
 
     if( email === null || email === "" || email.length === 0  ){
       setEmailinvalido(true)
@@ -81,7 +81,7 @@ export default function Login() {
   
   return (
     <View style={{height: "100%", width: "100%", color:"black", backgroundColor: "white"}}>
-      <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} keyboardVerticalOffset={80} style={{backgroundColor:"transparent"}}>
+      <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} keyboardVerticalOffset={100} style={{backgroundColor:"transparent"}}>
         <Image source={require("../images/logo.png")}  style={styles.bk}/>
 
       <ScrollView>
