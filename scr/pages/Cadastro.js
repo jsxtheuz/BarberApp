@@ -39,7 +39,7 @@ export default function Cadastro() {
           settextoInvalido("Número Inválido");
         }
       }else {
-        navegacao.navigate('Horarios');
+        navegacao.navigate('Produtos');
       }
     }
     
