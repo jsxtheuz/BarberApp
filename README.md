@@ -18,13 +18,14 @@ cd BarberApp
 
 Add the following code to the body of MainActivity class:
 
-@Override
- 
+@Override 
 protected void onCreate(Bundle savedInstanceState) {
  
   super.onCreate(null);
  
 }
+ 
+ 
 and make sure to add the following import statement at the top of this file below your package statement:
 
 import android.os.Bundle;
