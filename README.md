@@ -22,9 +22,7 @@ Add the following code to the body of MainActivity class:
  ```
 @Override 
 protected void onCreate(Bundle savedInstanceState) {
- 
   super.onCreate(null);
- 
 }
  ``` 
  
