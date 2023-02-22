@@ -2,7 +2,7 @@
 
 cd BarberApp
 
-##1- Install dependencys :
+## 1- Install dependencys :
 
  npm install @react-navigation/native
  
