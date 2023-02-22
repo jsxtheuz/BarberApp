@@ -19,14 +19,14 @@ cd BarberApp
 
 Add the following code to the body of MainActivity class:
  
-
+ ```
 @Override 
 protected void onCreate(Bundle savedInstanceState) {
  
   super.onCreate(null);
  
 }
- 
+ ``` 
  
 and make sure to add the following import statement at the top of this file below your package statement:
 
@@ -35,6 +35,6 @@ import android.os.Bundle;
  ##
 
 
-## 2- npx react-native run-android
+## 2-  ```npx react-native run-android ```
 
-## 3- npx react-native strat
+## 3-  ```npx react-native strat ```
